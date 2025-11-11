@@ -1,4 +1,4 @@
-# My Chrome Extension 🚀
+# WordEase Chrome Extension 🚀
 
 A simple Chrome Extension that [briefly describe what it does].
 
