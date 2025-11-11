@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "WordEase",
+  "version": "1.1",
+  "description": "Translate selected English words instantly to your chosen language.",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ],
+  "options_page": "options.html",
+  "icons": {
+    "48": "icon.png"
+  }
+}

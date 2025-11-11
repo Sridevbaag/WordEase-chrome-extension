@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WordEase Settings</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f4f4f4;
+    }
+    h2 {
+      margin-bottom: 15px;
+    }
+    select {
+      padding: 8px;
+      font-size: 14px;
+    }
+    button {
+      margin-top: 15px;
+      padding: 8px 12px;
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h2>WordEase Settings</h2>
+  <label for="language">Select your target language:</label><br><br>
+  <select id="language">
+    <option value="hi">Hindi (हिंदी)</option>
+    <option value="bn">Bengali (বাংলা)</option>
+    <option value="ta">Tamil (தமிழ்)</option>
+    <option value="te">Telugu (తెలుగు)</option>
+    <option value="ml">Malayalam (മലയാളം)</option>
+    <option value="fr">French (Français)</option>
+  </select><br>
+  <button id="save">Save Language</button>
+
+  <p id="status"></p>
+
+  <script src="options.js"></script>
+</body>
+</html>
