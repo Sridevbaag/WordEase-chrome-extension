@@ -1,2 +1,13 @@
-# WordEase-chrome-extension
-This extension will be useful for live translation. Ex: If you don't understand the meaning of a word, it can be in any language, it will translate it to your liking. You just select the word and the meaning will popped up
+# My Chrome Extension 🚀
+
+A simple Chrome Extension that [briefly describe what it does].
+
+## 🧩 Installation (Manual)
+
+1. Download this repository as a ZIP file:
+   - Click the green **Code** button → **Download ZIP**
+2. Unzip the file on your computer.
+3. Open Chrome and go to `chrome://extensions`
+4. Turn on **Developer Mode** (top-right corner)
+5. Click **Load unpacked**
+6. Select the folder you just unzipped.
