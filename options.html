@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WordEase Settings</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      display: flex;
+      justify-content: center;
+      padding: 32px 16px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.97);
+      border-radius: 24px;
+      padding: 32px;
+      max-width: 500px;
+      width: 100%;
+      height: fit-content;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+    }
+
+    .title {
+      font-size: 26px;
+      font-weight: 800;
+      text-align: center;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 28px;
+    }
+
+    /* Stats */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .stat-card {
+      background: linear-gradient(135deg, #f8faff, #f0f4ff);
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 14px;
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 22px;
+      font-weight: 800;
+      color: #667eea;
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 11px;
+      color: #94a3b8;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 2px;
+      display: block;
+    }
+
+    /* Section */
+    .section { margin-bottom: 22px; }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      margin-bottom: 10px;
+    }
+
+    /* Select */
+    select {
+      width: 100%;
+      padding: 12px 14px;
+      font-size: 15px;
+      border: 2px solid #e2e8f0;
+      border-radius: 12px;
+      background: white;
+      color: #1e293b;
+      font-family: inherit;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+    select:focus { outline: none; border-color: #667eea; }
+
+    /* Slider */
+    .slider-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    input[type=range] {
+      flex: 1;
+      accent-color: #667eea;
+      cursor: pointer;
+    }
+
+    .slider-val {
+      font-size: 14px;
+      font-weight: 700;
+      color: #667eea;
+      min-width: 30px;
+      text-align: right;
+    }
+
+    /* Toggle rows */
+    .toggle-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .toggle-row:last-child { border-bottom: none; }
+
+    .toggle-label {
+      font-size: 14px;
+      color: #334155;
+      font-weight: 500;
+    }
+
+    .toggle-label small {
+      display: block;
+      font-size: 12px;
+      color: #94a3b8;
+      font-weight: 400;
+      margin-top: 2px;
+    }
+
+    /* Toggle switch */
+    .toggle { position: relative; width: 44px; height: 24px; flex-shrink: 0; }
+    .toggle input { opacity: 0; width: 0; height: 0; }
+
+    .toggle-slider {
+      position: absolute;
+      inset: 0;
+      background: #cbd5e1;
+      border-radius: 24px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .toggle-slider::before {
+      content: '';
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      left: 3px;
+      top: 3px;
+      background: white;
+      border-radius: 50%;
+      transition: 0.2s;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    .toggle input:checked + .toggle-slider           { background: #667eea; }
+    .toggle input:checked + .toggle-slider::before   { transform: translateX(20px); }
+
+    /* Buttons */
+    .btn-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .btn {
+      flex: 1;
+      padding: 13px;
+      border: none;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+    }
+
+    .btn-danger {
+      background: #fef2f2;
+      color: #dc2626;
+      border: 1px solid #fecaca;
+    }
+    .btn-danger:hover { background: #fee2e2; }
+
+    /* Status */
+    #status {
+      margin-top: 14px;
+      padding: 11px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 500;
+      text-align: center;
+      min-height: 20px;
+      transition: all 0.2s;
+    }
+    .success { background: #dcfce7; color: #166534; }
+    .error   { background: #fef2f2; color: #dc2626; }
+
+    #history-meta {
+      font-size: 13px;
+      color: #94a3b8;
+      margin-bottom: 6px;
+    }
+
+    /* Dark mode */
+    @media (prefers-color-scheme: dark) {
+      body { background: linear-gradient(135deg, #1e293b, #0f172a); }
+      .card { background: rgba(15, 23, 42, 0.98); color: #f8fafc; }
+      .stat-card { background: #1e293b; border-color: #334155; }
+      select { background: #1e293b; border-color: #334155; color: #f8fafc; }
+      .toggle-label { color: #cbd5e1; }
+      .toggle-row { border-color: #334155; }
+      .section-label { color: #94a3b8; }
+      #history-meta { color: #64748b; }
+      .btn-danger { background: #1e293b; color: #f87171; border-color: #7f1d1d; }
+    }
+
+    @media (max-width: 480px) {
+      body { padding: 16px; }
+      .card { padding: 24px; }
+      .stats-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1 class="title">⚡ WordEase Settings</h1>
+
+    <!-- Stats dashboard -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-value" id="stat-total">—</span>
+        <span class="stat-label">Translated</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-value" id="stat-lang">—</span>
+        <span class="stat-label">Top Language</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-value" id="stat-days">—</span>
+        <span class="stat-label">Days Active</span>
+      </div>
+    </div>
+
+    <!-- Target language -->
+    <div class="section">
+      <div class="section-label">🌐 Target Language</div>
+      <select id="language">
+        <optgroup label="Indian Languages">
+          <option value="hi">🇮🇳 Hindi</option>
+          <option value="bn">🇮🇳 Bengali</option>
+          <option value="ta">🇮🇳 Tamil</option>
+          <option value="te">🇮🇳 Telugu</option>
+          <option value="ml">🇮🇳 Malayalam</option>
+          <option value="mr">🇮🇳 Marathi</option>
+          <option value="gu">🇮🇳 Gujarati</option>
+          <option value="kn">🇮🇳 Kannada</option>
+        </optgroup>
+        <optgroup label="European Languages">
+          <option value="fr">🇫🇷 French</option>
+          <option value="es">🇪🇸 Spanish</option>
+          <option value="de">🇩🇪 German</option>
+          <option value="it">🇮🇹 Italian</option>
+          <option value="pt">🇵🇹 Portuguese</option>
+          <option value="ru">🇷🇺 Russian</option>
+          <option value="nl">🇳🇱 Dutch</option>
+        </optgroup>
+        <optgroup label="Asian Languages">
+          <option value="ja">🇯🇵 Japanese</option>
+          <option value="zh">🇨🇳 Chinese (Simplified)</option>
+          <option value="ko">🇰🇷 Korean</option>
+          <option value="ar">🇸🇦 Arabic</option>
+        </optgroup>
+      </select>
+    </div>
+
+    <!-- Popup duration -->
+    <div class="section">
+      <div class="section-label">⏱️ Popup Duration</div>
+      <div class="slider-row">
+        <input type="range" id="duration" min="2" max="15" step="1" value="5">
+        <span class="slider-val" id="dur-val">5s</span>
+      </div>
+    </div>
+
+    <!-- Feature toggles -->
+    <div class="section">
+      <div class="section-label">⚙️ Features</div>
+      <div class="toggle-row">
+        <div class="toggle-label">
+          🔊 Text-to-Speech Button
+          <small>Show a speak button in the translation popup</small>
+        </div>
+        <label class="toggle">
+          <input type="checkbox" id="show-tts" checked>
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+    </div>
+
+    <div id="history-meta"></div>
+
+    <div class="btn-row">
+      <button class="btn btn-primary" id="save">💾 Save Settings</button>
+      <button class="btn btn-danger"  id="clear">🗑️ Clear History</button>
+    </div>
+
+    <div id="status"></div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>
