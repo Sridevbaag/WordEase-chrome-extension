@@ -1,4 +1,3 @@
-// WordEase Popup v2.0
 'use strict';
 
 let allHistory = [];
