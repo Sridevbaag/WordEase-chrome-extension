@@ -68,11 +68,9 @@ Built for students, researchers, and multilingual readers who want to stay in th
 
 ## Screenshots
 
-> *(Add your screenshots here after loading the extension)*
-
 | Popup | History | Settings |
 |---|---|---|
-| `screenshots/popup-translation.png` | `screenshots/history.png` | `screenshots/settings.png` |
+| ![Popup](screenshots/popup-translation.png) | ![History](screenshots/history.png) | ![Settings](screenshots/settings.png) |
 
 ---
 
