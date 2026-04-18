@@ -1,91 +1,343 @@
-<div id="top" class="">
+<div align="center">
 
-<div align="center" class="text-center">
-<h1>🌐 WORDEASE CHROME EXTENSION</h1>
-<p><em>Break Language Barriers, Empower Global Understanding</em></p>
+<img src="icons/icon128.png" alt="WordEase Logo" width="96" height="96" />
 
-<img alt="last-commit" src="https://img.shields.io/github/last-commit/Sridevbaag/WordEase-chrome-extension?style=flat&amp;logo=git&amp;logoColor=white&amp;color=0080ff" class="inline-block mx-1" style="margin: 0px 2px;">
-<img alt="repo-top-language" src="https://img.shields.io/github/languages/top/Sridevbaag/WordEase-chrome-extension?style=flat&amp;color=0080ff" class="inline-block mx-1" style="margin: 0px 2px;">
-<img alt="repo-language-count" src="https://img.shields.io/github/languages/count/Sridevbaag/WordEase-chrome-extension?style=flat&amp;color=0080ff" class="inline-block mx-1" style="margin: 0px 2px;">
-<p><em>Built with the tools and technologies:</em></p>
-<img alt="JSON" src="https://img.shields.io/badge/JSON-000000.svg?style=flat&amp;logo=JSON&amp;logoColor=white" class="inline-block mx-1" style="margin: 0px 2px;">
-<img alt="Markdown" src="https://img.shields.io/badge/Markdown-000000.svg?style=flat&amp;logo=Markdown&amp;logoColor=white" class="inline-block mx-1" style="margin: 0px 2px;">
-<img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=flat&amp;logo=JavaScript&amp;logoColor=black" class="inline-block mx-1" style="margin: 0px 2px;">
+# WordEase
+
+**Instant text translation, right where you read.**
+
+Select any text on any webpage — WordEase translates it immediately, no copy-paste, no new tabs, no friction.
+
+[![Version](https://img.shields.io/badge/version-2.0.0-667eea?style=flat-square)](https://github.com/Sridevbaag/WordEase-chrome-extension/releases)
+[![Manifest](https://img.shields.io/badge/manifest-v3-764ba2?style=flat-square)](https://developer.chrome.com/docs/extensions/mv3/)
+[![License](https://img.shields.io/badge/license-MIT-10b981?style=flat-square)](LICENSE)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES2022-F7DF1E?style=flat-square&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![Last Commit](https://img.shields.io/github/last-commit/Sridevbaag/WordEase-chrome-extension?style=flat-square&color=0080ff)](https://github.com/Sridevbaag/WordEase-chrome-extension/commits)
+
 </div>
-<br>
-<hr>
-<h2>Table of Contents</h2>
-<ul class="list-disc pl-4 my-0">
-<li class="my-0"><a href="#overview">Overview</a></li>
-<li class="my-0"><a href="#getting-started">Getting Started</a>
-<ul class="list-disc pl-4 my-0">
-<li class="my-0"><a href="#prerequisites">Prerequisites</a></li>
-<li class="my-0"><a href="#installation">Installation</a></li>
-<li class="my-0"><a href="#usage">Usage</a></li>
-<li class="my-0"><a href="#testing">Testing</a></li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2>Overview</h2>
-<p>WordEase-chrome-extension is a browser tool that enables instant, context-aware translation of selected text directly within Chrome, making multilingual browsing effortless. It combines real-time API-driven translations with a user-friendly interface for customization and quick access.</p>
-<p><strong>Why WordEase?</strong></p>
-<p>This project aims to enhance language comprehension and productivity during web sessions. The core features include:</p>
-<ul class="list-disc pl-4 my-0">
-<li class="my-0">🎯 <strong>🧩 Real-time Translation:</strong> Capture user-selected text and fetch translations instantly, providing immediate context.</li>
-<li class="my-0">🛠️ <strong>🔧 Seamless Background Processes:</strong> Manage communication between components for responsive, persistent functionality.</li>
-<li class="my-0">🌐 <strong>🌟 Customizable Language Preferences:</strong> Allow users to select and save target languages for personalized experiences.</li>
-<li class="my-0">📦 <strong>📱 Intuitive UI Components:</strong> Offer accessible popup and options pages for quick interactions and settings management.</li>
-<li class="my-0">⚙️ <strong>🔄 Dynamic Popup Positioning:</strong> Ensure translation results are displayed conveniently within the browsing context.</li>
-</ul>
-<hr>
-<h2>Getting Started</h2>
-<h3>Prerequisites</h3>
-<p>This project requires the following dependencies:</p>
-<ul class="list-disc pl-4 my-0">
-<li class="my-0"><strong>Programming Language:</strong> JavaScript</li>
-<li class="my-0"><strong>Package Manager:</strong> Npm</li>
-</ul>
-<h3>Installation</h3>
-<p>Build WordEase-chrome-extension from the source and install dependencies:</p>
-<ol>
-<li class="my-0">
-<p><strong>Clone the repository:</strong></p>
-<pre><code class="language-sh">❯ git clone https://github.com/Sridevbaag/WordEase-chrome-extension
-</code></pre>
-</li>
-<li class="my-0">
-<p><strong>Navigate to the project directory:</strong></p>
-<pre><code class="language-sh">❯ cd WordEase-chrome-extension
-</code></pre>
-</li>
-<li class="my-0">
-<p><strong>Install the dependencies:</strong></p>
-</li>
-</ol>
-<p><strong>Using <a href="https://www.npmjs.com/">npm</a>:</strong></p>
-<pre><code class="language-sh">❯ npm install
-</code></pre>
-<h3>Usage</h3>
-<p>Run the project with:</p>
-<p><strong>Using <a href="https://www.npmjs.com/">npm</a>:</strong></p>
-<pre><code class="language-sh">npm start
-</code></pre>
-<h3>Testing</h3>
-<p>Wordease-chrome-extension uses the {<strong>test_framework</strong>} test framework. Run the test suite with:</p>
-<p><strong>Using <a href="https://www.npmjs.com/">npm</a>:</strong></p>
-<pre><code class="language-sh">npm test
-</code></pre>
-<hr>
-<div align="left" class=""><a href="#top">⬆ Return</a></div>
-<hr>
-</div>
-## 🧩 Installation
 
-1. Download this repository as a ZIP file:
-   - Click the green **Code** button → **Download ZIP**
-2. Unzip the file on your computer.
-3. Open Chrome and go to `chrome://extensions`
-4. Turn on **Developer Mode** (top-right corner)
-5. Click **Load unpacked**
-6. Select the folder you just unzipped.
+---
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [Supported Languages](#supported-languages)
+- [Installation](#installation)
+- [How to Use](#how-to-use)
+- [Project Structure](#project-structure)
+- [Architecture](#architecture)
+- [APIs Used](#apis-used)
+- [Permissions Explained](#permissions-explained)
+- [Contributing](#contributing)
+- [Author](#author)
+- [License](#license)
+
+---
+
+## Overview
+
+WordEase is a Chrome Extension (Manifest V3) that delivers **instant, in-page translation** when you highlight text. Instead of switching apps or opening a new tab, a sleek glassmorphism popup appears right at your cursor with the translation — complete with a progress timer, copy button, and text-to-speech support.
+
+Built for students, researchers, and multilingual readers who want to stay in the flow while browsing.
+
+---
+
+## Features
+
+| Feature | Description |
+|---|---|
+| ⚡ **Instant Translation** | Highlight any text → translation appears in under a second |
+| 🔊 **Text-to-Speech** | Hear the translation spoken aloud in the target language |
+| 📋 **One-click Copy** | Copy the translation directly from the popup |
+| 🔄 **Fallback API** | If the primary API fails, a secondary API kicks in automatically |
+| 🧠 **Session Cache** | Repeated words are served instantly from memory (LRU, 100 entries) |
+| 🖱️ **Right-click Menu** | Translate via browser context menu — no keyboard needed |
+| ⌨️ **Keyboard Shortcut** | Press `Alt+T` to translate selected text instantly |
+| 📜 **Translation History** | Last 30 translations saved, searchable, and exportable |
+| ⬇️ **Export History** | Download your full history as a `.json` file |
+| 📊 **Stats Dashboard** | Track total translations, top language, and days active |
+| ⏱️ **Configurable Popup Timer** | Adjust how long the popup stays visible (2–15 seconds) |
+| 🌙 **Dark Mode** | Automatically matches your system theme |
+| 🔁 **Live Settings Sync** | Changes in Options take effect on open tabs immediately |
+| 🧹 **Auto Cleanup** | History entries older than 30 days are removed automatically |
+| 🏅 **Milestone Notifications** | Chrome notification every 50 translations |
+
+---
+
+## Screenshots
+
+> *(Add your screenshots here after loading the extension)*
+
+| Popup | History | Settings |
+|---|---|---|
+| `screenshots/popup-translation.png` | `screenshots/history.png` | `screenshots/settings.png` |
+
+---
+
+## Supported Languages
+
+WordEase supports **20 languages** across three regional groups:
+
+### 🇮🇳 Indian Languages
+| Code | Language | Script |
+|---|---|---|
+| `hi` | Hindi | हिंदी |
+| `bn` | Bengali | বাংলা |
+| `ta` | Tamil | தமிழ் |
+| `te` | Telugu | తెలుగు |
+| `ml` | Malayalam | മലയാളം |
+| `mr` | Marathi | मराठी |
+| `gu` | Gujarati | ગુજરાતી |
+| `kn` | Kannada | ಕನ್ನಡ |
+
+### 🌍 European Languages
+| Code | Language |
+|---|---|
+| `en` | English |
+| `fr` | French |
+| `es` | Spanish |
+| `de` | German |
+| `it` | Italian |
+| `pt` | Portuguese |
+| `ru` | Russian |
+| `nl` | Dutch |
+
+### 🌏 Asian Languages
+| Code | Language | Script |
+|---|---|---|
+| `ja` | Japanese | 日本語 |
+| `zh` | Chinese (Simplified) | 中文 |
+| `ko` | Korean | 한국어 |
+| `ar` | Arabic | العربية |
+
+> **Note on English:** Selecting English as the target automatically detects the source language (`auto|en`), making it useful for translating non-English pages into English.
+
+---
+
+## Installation
+
+### From GitHub (Developer Mode)
+
+1. **Download** this repository:
+   ```
+   git clone https://github.com/Sridevbaag/WordEase-chrome-extension.git
+   ```
+   Or click **Code → Download ZIP** and extract it.
+
+2. **Open Chrome** and navigate to:
+   ```
+   chrome://extensions
+   ```
+
+3. **Enable Developer Mode** using the toggle in the top-right corner.
+
+4. Click **Load unpacked** and select the extracted folder.
+
+5. The WordEase icon will appear in your Chrome toolbar. **Pin it** for easy access.
+
+> No build step required. This is a pure JavaScript extension — no npm, no bundler.
+
+---
+
+## How to Use
+
+### Translate Text
+1. Visit any webpage.
+2. **Highlight any word or sentence** with your mouse.
+3. A translation popup appears automatically below the selection.
+
+### Use the Popup
+- **🔊** — Listen to the translation spoken aloud.
+- **📋** — Copy the translated text to clipboard.
+- **✕** — Dismiss the popup immediately.
+- The progress bar at the bottom shows the remaining display time.
+- Hovering over the popup pauses the auto-close timer.
+
+### Keyboard Shortcut
+Press `Alt+T` on any page to translate whatever text you have selected.
+
+### Right-click Menu
+Right-click on any selected text → **"Translate '...' with WordEase"**.
+
+### View History
+Click the **WordEase icon** in the toolbar to open the history popup.
+- **Search** through past translations using the search bar.
+- **Click an item** → copies the original text.
+- **Shift+click an item** → copies the translated text.
+- **Export JSON** → downloads your full history.
+
+### Change Settings
+Click the **⚙️ Options** link (or right-click the toolbar icon → Options) to:
+- Choose your target language.
+- Adjust how long the popup stays visible.
+- Toggle the Text-to-Speech button on/off.
+- View your translation stats.
+- Clear history.
+
+---
+
+## Project Structure
+
+```
+WordEase-chrome-extension/
+│
+├── manifest.json          # Extension configuration (Manifest V3)
+├── background.js          # Service worker — context menu, alarms, stats, notifications
+├── content.js             # Injected into all pages — selection listener, popup, translation
+├── styles.css             # Popup styles injected into host pages
+│
+├── popup.html             # History popup (toolbar icon)
+├── popup.js               # History popup logic — search, copy, export
+│
+├── options.html           # Settings page
+├── options.js             # Settings logic — save, stats, clear
+│
+└── icons/
+    ├── icon16.png
+    ├── icon48.png
+    └── icon128.png
+```
+
+---
+
+## Architecture
+
+```
+┌─────────────────────────────────────────────────┐
+│                   Chrome Browser                │
+│                                                 │
+│  ┌──────────────┐      ┌──────────────────────┐ │
+│  │  Web Page    │      │   background.js      │ │
+│  │              │      │   (Service Worker)   │ │
+│  │  content.js  │◄────►│                      │ │
+│  │  styles.css  │      │  • Context Menu      │ │
+│  │              │      │  • Keyboard Commands │ │
+│  │  • Selection │      │  • Stats Tracking    │ │
+│  │  • Popup UI  │      │  • Notifications     │ │
+│  │  • TTS       │      │  • History Cleanup   │ │
+│  │  • Cache     │      └──────────────────────┘ │
+│  └──────┬───────┘                               │
+│         │                                       │
+│         │  chrome.storage.sync                  │
+│         ▼                                       │
+│  ┌──────────────┐      ┌──────────────────────┐ │
+│  │  popup.html  │      │   options.html       │ │
+│  │  popup.js    │      │   options.js         │ │
+│  │              │      │                      │ │
+│  │  • History   │      │  • Language select   │ │
+│  │  • Search    │      │  • Duration slider   │ │
+│  │  • Export    │      │  • TTS toggle        │ │
+│  └──────────────┘      │  • Stats dashboard   │ │
+│                        └──────────────────────┘ │
+└─────────────────────────────────────────────────┘
+         │
+         ▼
+┌─────────────────────────┐
+│  Translation APIs       │
+│                         │
+│  Primary:               │
+│  MyMemory Translate     │
+│  api.mymemory.          │
+│  translated.net         │
+│                         │
+│  Fallback:              │
+│  Lingva Translate       │
+│  lingva.ml              │
+└─────────────────────────┘
+```
+
+**Data flow for a translation:**
+1. User selects text on a page → `content.js` detects `mouseup`
+2. Check session cache — serve instantly if found
+3. If not cached → call MyMemory API (6s timeout)
+4. If MyMemory fails → call Lingva Translate (6s timeout)
+5. Result stored in cache + saved to `chrome.storage.sync` history
+6. Popup rendered with translation, TTS, and copy button
+7. Background service worker updates stats in `chrome.storage.local`
+
+---
+
+## APIs Used
+
+### MyMemory Translated (Primary)
+- **URL:** `https://api.mymemory.translated.net/get`
+- **Type:** Free, no API key required
+- **Docs:** [mymemory.translated.net](https://mymemory.translated.net/doc/spec.php)
+- **Limit:** 5,000 words/day for anonymous use
+
+### Lingva Translate (Fallback)
+- **URL:** `https://lingva.ml/api/v1/`
+- **Type:** Free, open-source Google Translate frontend
+- **Repo:** [github.com/thedaviddelta/lingva-translate](https://github.com/thedaviddelta/lingva-translate)
+- **Used when:** MyMemory times out or returns an error
+
+---
+
+## Permissions Explained
+
+| Permission | Why it's needed |
+|---|---|
+| `storage` | Save settings and history via `chrome.storage.sync` and `.local` |
+| `activeTab` | Send messages to the active tab (keyboard shortcut trigger) |
+| `notifications` | Show milestone notifications (e.g. "50 translations!") |
+| `alarms` | Schedule daily cleanup of history older than 30 days |
+| `contextMenus` | Add "Translate with WordEase" to the right-click menu |
+| `host_permissions` | Allow fetch calls to the two translation API domains |
+
+---
+
+## Contributing
+
+Contributions are welcome! Here's how to get started:
+
+1. Fork the repository.
+2. Create a feature branch:
+   ```
+   git checkout -b feature/your-feature-name
+   ```
+3. Make your changes and test them locally via `chrome://extensions` → Load unpacked.
+4. Commit with a clear message:
+   ```
+   git commit -m "feat: add your feature description"
+   ```
+5. Push and open a Pull Request.
+
+### Ideas for contribution
+- Add support for detecting the source language automatically
+- Add a mini-dictionary panel (definitions, synonyms)
+- Support translating selected text in PDF viewer
+- Add more target languages
+- Write unit tests with Jest + Chrome Extension testing utilities
+
+---
+
+## Author
+
+**Sridev Bag**
+- GitHub: [@Sridevbaag](https://github.com/Sridevbaag)
+- Project: [WordEase Chrome Extension](https://github.com/Sridevbaag/WordEase-chrome-extension)
+
+BCA Student · Sister Nivedita University, Kolkata  
+Interested in Full Stack Development, Android, and building useful tools.
+
+---
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+You are free to use, modify, and distribute this project. Attribution appreciated but not required.
+
+---
+
+<div align="center">
+
+Made with ❤️ by Sridev Bag
+
+⭐ Star this repo if WordEase made your browsing easier!
+
+[⬆ Back to top](#wordease)
+
+</div>
