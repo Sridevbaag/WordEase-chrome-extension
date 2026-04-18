@@ -18,6 +18,7 @@ function setCache(text, lang, value) {
 
 // ── Language metadata ─────────────────────────────────────────────────────────
 const LANG_META = {
+  en: { name: 'English',    bcp: 'en-US' },
   hi: { name: 'Hindi',      bcp: 'hi-IN' },
   bn: { name: 'Bengali',    bcp: 'bn-BD' },
   ta: { name: 'Tamil',      bcp: 'ta-IN' },
@@ -118,21 +119,32 @@ async function triggerTranslation(text) {
 async function fetchTranslation(text, lang) {
   const encoded = encodeURIComponent(text);
 
+  let sourceLang = 'en';
+  if (lang === 'en') {
+    sourceLang = detectPageLanguage();
+  }
+
+  const langPair = `${sourceLang}|${lang}`;
+
   // Primary: MyMemory
-  try {
-    const res  = await fetch(
-      `https://api.mymemory.translated.net/get?q=${encoded}&langpair=en|${lang}`,
-      { signal: AbortSignal.timeout(6000) }
-    );
-    const data = await res.json();
-    const tr   = data.responseData?.translatedText;
-    if (tr && tr.toLowerCase() !== text.toLowerCase()) return tr;
-  } catch { /* fallthrough */ }
+  if (sourceLang !== lang) {
+    try {
+      const res  = await fetch(
+        `https://api.mymemory.translated.net/get?q=${encoded}&langpair=${langPair}`,
+        { signal: AbortSignal.timeout(6000) }
+      );
+      const data = await res.json();
+      const tr   = data.responseData?.translatedText;
+      const isError = tr && tr.toUpperCase().includes('INVALID SOURCE LANGUAGE');
+      if (tr && tr.toLowerCase() !== text.toLowerCase()) return tr;
+    } catch { /* fallthrough */ }
+  }
 
   // Fallback: Lingva Translate
   try {
+    const sourceLang = lang === 'en' ? 'auto' : 'en';
     const res  = await fetch(
-      `https://lingva.ml/api/v1/en/${lang}/${encoded}`,
+      `https://lingva.ml/api/v1/${sourceLang}/${lang}/${encoded}`,
       { signal: AbortSignal.timeout(6000) }
     );
     const data = await res.json();
@@ -140,6 +152,23 @@ async function fetchTranslation(text, lang) {
   } catch { /* both failed */ }
 
   return null;
+}
+
+function detectPageLanguage() {
+  // 1. Check <html lang="fr"> — most reliable
+  const htmlLang = document.documentElement.lang;
+  if (htmlLang) {
+    const code = htmlLang.split('-')[0].toLowerCase(); // "zh-CN" → "zh"
+    if (code.length === 2 && code !== 'en') return code;
+  }
+
+  const metaLang = document.querySelector('meta[http-equiv="content-language"]');
+  if (metaLang) {
+    const code = metaLang.getAttribute('content')?.split('-')[0].toLowerCase();
+    if (code && code.length === 2 && code !== 'en') return code;
+  }
+
+  return 'en';
 }
 
 // ── Popup: create loading state ───────────────────────────────────────────────
